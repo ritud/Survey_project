@@ -1,0 +1,24 @@
+<header>
+  <a [routerLink]="['/create']" >Create a new Poll</a>
+  <a [routerLink]="['']" >Logout</a>
+</header>
+
+<h2>Current Polls:</h2>
+<input type="text" [(ngModel)]='search_content' placeholder="Search" class="search">
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Survey Question</th>
+		<th>Date Posted</th>
+		<th>Action</th>
+	</tr>
+	<tr *ngFor="let survey of surveys | search:search_content">
+		<td style="width:120px;">{{survey.name}}</td>
+		<td style="width:280px;" ><a (click)="getSurvey(survey._id)" class="link">{{survey.question}}</a></td>
+		<td style="width:150px;">{{survey.created_at | date:'longDate'}}</td>
+		<td style="width:120px;">
+			<button *ngIf="_taskService.get_name() == survey.name" (click)='deleteSurvey(survey._id)' >delete</button></td>
+	</tr>
+</table>
+<br>

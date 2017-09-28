@@ -1,0 +1,5 @@
+<form (submit)='submit()' action="#" method="post" #formData='ngForm'>
+  <label>Your Name:</label>
+  <input type="text" name="uname" class="text" required minlength="3" [(ngModel)]="name" #uname="ngModel"><span *ngIf="!uname?.valid && uname?.touched">*Name should be atleast 3 characters long!</span>
+  <p><input type="submit" value="Login" class="submit" [disabled]="formData.valid ? null : true"></p>
+</form>

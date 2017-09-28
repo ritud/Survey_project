@@ -1,0 +1,22 @@
+<div class="main">
+
+  <h3>Put the Questions and options here:</h3>
+  <a [routerLink]="['/dashboard']" class="head">Cancel</a>
+
+  <form (submit)='submit()' action="#" method="post" #formData='ngForm'>
+    <table>
+    <tr><td>Question</td><td>
+      <input type="text" name="ques" [(ngModel)]="question" #ques='ngModel'required minlength="8" class="text"><span *ngIf="!ques?.valid && ques?.touched">Question should be 8 characters long!</span></td></tr>
+    <tr><td>Option1: </td><td>
+    <input type="text" name="opt1" [(ngModel)]="option1" #opt1='ngModel' required minlength="3" class="text"><span *ngIf="!opt1?.valid && opt1?.touched">Option is required and should be 3 characters long!</span></td></tr>
+    <tr><td>Option2: </td><td>
+    <input type="text" name="opt2" [(ngModel)]="option2" #opt2='ngModel' required minlength="3" class="text"><span *ngIf="!opt2?.valid && opt2?.touched">Option is required and should be 3 characters long!</span></td></tr>
+    <tr><td>Option3: </td><td>
+    <input type="text" name="opt3" [(ngModel)]="option3" #opt3='ngModel' required minlength="3" class="text"><span *ngIf="!opt3?.valid && opt3?.touched">Option is required and should be 3 characters long!</span></td></tr>
+    <tr><td>Option4: </td><td>
+    <input type="text" name="opt4" [(ngModel)]="option4" #opt4='ngModel' required minlength="3" class="text"><span *ngIf="!opt4?.valid && opt4?.touched">Option is required and should be 3 characters long!</span></td></tr>
+    <tr><td></td><td><input type="submit" value="Create Poll" class="submit"  [disabled]="formData.valid ? null : true"></td></tr>
+  </table>
+  </form>
+
+</div>

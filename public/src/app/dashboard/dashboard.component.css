@@ -1,0 +1,22 @@
+header{
+  margin-left: 970px;
+}
+header a{
+  margin-right: 10px;
+}
+
+table{
+  margin:auto;
+}
+td {
+  text-align: center;
+}
+
+.search{
+  margin-left: 900px;
+  margin-bottom: 30px;
+}
+.link{
+  color:blue;
+  text-decoration: underline;
+}
